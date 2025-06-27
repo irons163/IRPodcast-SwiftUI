@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4ABD002F2E103BCB00F8D9E4 /* FeedKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4ABD002E2E103BCB00F8D9E4 /* FeedKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		4ABD00092E0ECAD000F8D9E4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -59,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ABD002F2E103BCB00F8D9E4 /* FeedKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +140,7 @@
 			);
 			name = "IRPodcast-SwiftUI";
 			packageProductDependencies = (
+				4ABD002E2E103BCB00F8D9E4 /* FeedKit */,
 			);
 			productName = "IRPodcast-SwiftUI";
 			productReference = 4ABDFFEE2E0ECACF00F8D9E4 /* IRPodcast-SwiftUI.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = 4ABDFFE52E0ECACF00F8D9E4;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				4ABD002D2E103BCB00F8D9E4 /* XCRemoteSwiftPackageReference "FeedKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4ABDFFEF2E0ECACF00F8D9E4 /* Products */;
 			projectDirPath = "";
@@ -558,6 +567,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4ABD002D2E103BCB00F8D9E4 /* XCRemoteSwiftPackageReference "FeedKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nmdias/FeedKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.1.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4ABD002E2E103BCB00F8D9E4 /* FeedKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4ABD002D2E103BCB00F8D9E4 /* XCRemoteSwiftPackageReference "FeedKit" */;
+			productName = FeedKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4ABDFFE62E0ECACF00F8D9E4 /* Project object */;
 }
