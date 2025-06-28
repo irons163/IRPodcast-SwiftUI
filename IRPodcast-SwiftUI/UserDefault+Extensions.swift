@@ -9,21 +9,6 @@ import Foundation
 import SwiftUI
 import Combine
 
-class FavoritesViewModel: ObservableObject {
-
-    @Published private(set) var podcasts: [Podcast] = []
-
-    private let manager: FavoritesManager
-    private var cancellable: AnyCancellable?
-
-    init(manager: FavoritesManager = FavoritesManager()) {
-        self.manager = manager
-        cancellable = manager.objectWillChange.sink { [weak self] _ in
-            self?.podcasts = self?.manager.favoritedPodcasts ?? []
-        }
-    }
-}
-
 protocol FavoritesManagerProtocol: ObservableObject {
     
     var favoritedPodcasts: [Podcast] { get }
