@@ -12,17 +12,6 @@ let Current = A()
 //let Current = Environment.live
 //let Current: Environment = Environment.mock
 
-protocol Environment2 {
-    associatedtype T: FavoritesManagerProtocol
-    var favoritesManager: T { get }
-    associatedtype K: NetworkServiceProtocol
-    var networkService: K { get }
-}
-
-struct A: Environment2 {
-    var favoritesManager: FavoritesManager = FavoritesManager()
-    var networkService: NetworkService2 = NetworkService2()
-}
 
 struct Environment {
     let networkService: NetworkService
@@ -76,19 +65,6 @@ struct NetworkService2: NetworkServiceProtocol {
     struct SearchResult: Decodable {
         let resultCount: Int
         let results: [Podcast]
-    }
-}
-
-extension NetworkService {
-    static let mock = NetworkService { searchText in
-        let list: [Podcast] = [
-            Podcast(id: "mock1", content: "contnet1", subtitle: "subtile1"),
-            Podcast(id: "mock2", content: "contnet2", subtitle: "subtile2"),
-            Podcast(id: "mock3", content: "contnet3", subtitle: "subtile3")
-        ]
-        return list
-    } fetchEpisodes: { feedUrl in
-        return []
     }
 }
 

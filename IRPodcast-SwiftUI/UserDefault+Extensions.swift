@@ -9,23 +9,6 @@ import Foundation
 import SwiftUI
 import Combine
 
-struct FavoritesDataStore {
-    
-    private let userDefaults = UserDefaults.standard
-    private let favoritedPodcastKey = "favoritedPodcastKey"
-    
-    func fetch() -> [Podcast] {
-        guard let savedPodcasts = try? userDefaults.get(objectType: [Podcast].self, forKey: favoritedPodcastKey) else {
-            return []
-        }
-        return savedPodcasts
-    }
-
-    func save(_ podcasts: [Podcast]) {
-        try? userDefaults.set(object: podcasts, forKey: favoritedPodcastKey)
-    }
-}
-
 //extension UserDefaults {
 //    
 //    static let favoritedPodcastKey = "favoritedPodcastKey"
